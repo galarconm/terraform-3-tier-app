@@ -1,1 +1,1 @@
-public_key = "~/.ssh/id_rsa.pub"
+# public_key = "~/.ssh/id_rsa.pub"
