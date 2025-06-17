@@ -1,7 +1,7 @@
 resource "aws_launch_template" "web_lt" {
   name_prefix   = "web-lt-"
-  image_id      = "ami-050499786ebf55a6a" # Ubuntu 22.04 LTS
-  instance_type = "t3.micro"
+  image_id      = "ami-020cba7c55df1f615" # Ubuntu 24.04 LTS
+  instance_type = "t2.micro"
   key_name      = aws_key_pair.ssh_key.key_name
   network_interfaces {
     security_groups = [aws_security_group.ec2_sg.id]
