@@ -9,14 +9,15 @@ resource "aws_db_subnet_group" "db_subnet_group" {
   }
 }
 
-resource "aws_db_instance" "mydb" {
-  allocated_storage    = 20
-  engine               = "mysql"
-  instance_class       = "db.t2.micro"
-  identifier           = "mydatabase"
-  username             = "admin"
-  password             = "password"
-  db_subnet_group_name = aws_db_subnet_group.db_subnet_group.name
-  multi_az             = true
-  skip_final_snapshot  = true
-}
+# resource "aws_db_instance" "mydb" {
+#   allocated_storage    = 20
+#   engine               = "mysql"
+#   engine_version       = "8.0.41"
+#   instance_class       = "db.t3.micro"
+#   identifier           = "mydatabase"
+#   username             = "admin"
+#   password             = "password"
+#   db_subnet_group_name = aws_db_subnet_group.db_subnet_group.name
+#   #multi_az             = true
+#   skip_final_snapshot  = true
+# }

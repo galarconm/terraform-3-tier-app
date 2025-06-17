@@ -1,6 +1,6 @@
 resource "aws_launch_template" "web_lt" {
   name_prefix   = "web-lt-"
-  image_id      = "ami-0953476d60561c955" # Amazon Linux 2023 AMI
+  image_id      = " ami-050499786ebf55a6a" # Ubuntu 22.04 LTS
   instance_type = "t2.micro"
   key_name      = aws_key_pair.ssh_key.key_name
   network_interfaces {
@@ -10,8 +10,8 @@ resource "aws_launch_template" "web_lt" {
 
   user_data = base64encode(<<-EOF
               #!/bin/bash
-              yum update -y
-              yum install -y httpd
+              apt update -y
+              apt install -y httpd
               systemctl start httpd
               systemctl enable httpd
               echo "<html><h1>Hello World!</h1></html>" > /var/www/html/index.html
