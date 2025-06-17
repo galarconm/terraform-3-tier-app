@@ -39,7 +39,7 @@ jobs:
         run: terraform plan -var="public_key=${{ secrets.PUBLIC_SSH_KEY }}" -input=false  
       
       - name: Terraform Apply
-        run: terraform apply -var="public_key=${{ secrets.PUBLIC_SSH_KEY }}" -input=false          
+        run: terraform apply -auto-approve -var="public_key=${{ secrets.PUBLIC_SSH_KEY }}" -input=false          
 
   
 
